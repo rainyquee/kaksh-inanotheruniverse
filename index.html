@@ -985,8 +985,8 @@ addEventListener('touchend',()=>{s=null},true);
 })();
 </script>
 <style>
-#isl{transition:width .5s cubic-bezier(.3,1.35,.4,1),height .5s cubic-bezier(.3,1.35,.4,1),border-radius .5s;overflow:hidden;color:#fff;cursor:pointer}
-#isl.s{width:176px}#isl.m{width:296px;height:46px;border-radius:24px}#isl.e{width:369px;height:var(--eh,92px);border-radius:40px}
+#isl,html.mb #isl,html.sa #isl{display:block!important;pointer-events:auto!important}#isl{transition:width .5s cubic-bezier(.3,1.35,.4,1),height .5s cubic-bezier(.3,1.35,.4,1),border-radius .5s;overflow:hidden;color:#fff;cursor:pointer}
+#isl::after{content:'';position:absolute;right:15px;top:50%;width:12px;height:12px;margin-top:-6px;border-radius:50%;background:radial-gradient(circle at 35% 35%,#26385f,#06080d 70%);box-shadow:0 0 0 2px #0b0d12;transition:opacity .25s}#isl.s::after,#isl.m::after,#isl.e::after{opacity:0}#isl.s{width:176px}#isl.m{width:296px;height:46px;border-radius:24px}#isl.e{width:369px;height:var(--eh,92px);border-radius:40px}
 .k_c,.k_x{position:absolute;inset:0;display:flex;align-items:center;font-size:15px;font-weight:600}
 .k_c{justify-content:space-between;padding:0 14px}
 .k_x{flex-direction:column;justify-content:center;align-items:stretch;gap:10px;padding:14px 22px;animation:k_f .3s .12s both}
@@ -1051,8 +1051,8 @@ function draw(){
  if(k=='med'){c=art(m,26)+wv(wc);x=`<div class="k_rw">${art(m,44)}<div class="k_tx"><b>${m.t}</b><small>${m.a}</small></div>${wv(wc)}</div><div class="k_pr"><i style="width:${pos/m.L*100}%"></i></div><div class="k_cn">${[['pv','pv'],['pp',play?'ps':'pl'],['nx','nx']].map(a=>`<button data-ka="${a[0]}">${S(G[a[1]],a[0]=='pp'?34:28)}</button>`).join('')}</div>`;h=172}
  if(k=='chg'){const o=st.lvl<=20?'#ff3b30':'#30d158';x=`<div class="k_cb"><div class="k_tr"><u style="width:${st.lvl}%;background:${o}"></u><em style="left:${st.lvl}%;background:${o};box-shadow:0 0 16px ${o}">${S(G.bolt,12)}${st.lvl}</em></div><b>~${Math.round((100-st.lvl)*.9)} mnt</b></div>`;h=66}
  if(k=='sil')x=`<span class="k_sp">${BEL}</span><b style="margin-left:auto;margin-right:6px;color:${st.sil?'#ff453a':'#fff'}">${st.sil?'Senyap':'Dering'}</b>`;
- I.className=!k?'':(k=='chg'||k=='sil'||ex)?(k=='sil'?'m':'e'):'s';I.style.setProperty('--eh',h+'px');
- I.innerHTML=k?`<div class="k_c">${c}</div><div class="k_x">${x}</div>`:'';
+ const pst=!k&&(st.sil||st.dnd||st.chg);if(pst){c=(st.sil?BEL.replace('#fff','#ff453a'):'<span></span>')+(st.chg?S(G.bolt,16,'#30d158'):st.dnd?S(G.moon,15,'#a78bfa'):'<span></span>')}I.className=pst?'s':!k?'':(k=='chg'||k=='sil'||ex)?(k=='sil'?'m':'e'):'s';I.style.setProperty('--eh',h+'px');
+ I.innerHTML=(k||pst)?`<div class="k_c">${c}</div><div class="k_x">${x}</div>`:'';
 }
 function flash(k,ms){tr={k};draw();clearTimeout(tT);tT=setTimeout(()=>{tr=0;draw()},ms)}
 function act(a){
@@ -1061,8 +1061,8 @@ function act(a){
  draw();pn=='c'&&ccr();
 }
 I.addEventListener('click',e=>{const b=e.target.closest('[data-ka]');if(b){e.stopPropagation();act(b.dataset.ka);return}
- if(tr||!(cs||play))return;ex=!ex;draw();clearTimeout(eT);if(ex)eT=setTimeout(()=>{ex=0;draw()},6000)});
-function setChg(v){st.chg=+v;sbr();if(v)flash('chg',3600)}
+ if(tr)return;if(!(cs||play)){play=1;draw();return}ex=!ex;draw();clearTimeout(eT);if(ex)eT=setTimeout(()=>{ex=0;draw()},6000)});
+function setChg(v){st.chg=+v;sbr();if(v)flash('chg',3600);else draw()}
 setInterval(()=>{if(cs)cs.s++;if(play)pos=(pos+1)%M[mi].L;document.querySelectorAll('#ct,.ct2').forEach(e=>e.textContent=fm(cs?cs.s:0));document.querySelectorAll('.k_pr i').forEach(e=>e.style.width=pos/M[mi].L*100+'%')},1000);
 setInterval(()=>{if(st.chg&&!real&&st.lvl<100){st.lvl++;sbr()}},20000);
 try{navigator.getBattery&&navigator.getBattery().then(b=>{real=1;st.lvl=Math.round(b.level*100);st.chg=+b.charging;sbr();b.addEventListener('chargingchange',()=>{if(b.charging!=!!st.chg)setChg(b.charging)});b.addEventListener('levelchange',()=>{st.lvl=Math.round(b.level*100);sbr()})})}catch(_){}
@@ -1084,7 +1084,7 @@ function tg(id){
  if(id=='qr'||id=='shz')return;
  if(id=='cam'){close();if(typeof app!='undefined'&&!app&&typeof openApp=='function'){const el=q('#hm [data-o="cam"]');el&&openApp('cam',el)}return}
  if(id=='chg')setChg(!st.chg);else if(id=='sil'){st.sil^=1;flash('sil',2200)}else st[id]=+!st[id];
- sbr();ccr()}
+ sbr();draw();ccr()}
 CC.addEventListener('click',e=>{const r=e.target.closest('[data-kr]');if(r){st.off[r.dataset.kr]=1;ccr();return}
  if(e.target.closest('[data-kc]')){st.edit^=1;ccr();return}
  const a=e.target.closest('[data-ka]');if(a){act(a.dataset.ka);return}
