@@ -91,7 +91,7 @@ callTo=function(n){const id=PE[n]?n:Object.keys(PE).find(k=>PE[k].num==String(n)
  const d=document.createElement('div');d.className='cl';
  d.innerHTML=`<div class="cn">${nmOf(id)}</div><div class="cs2">memanggil…</div><div class="cg">${[['🔊','Speaker',1],['▶','FaceTime'],['🎙','Mute'],['👤','Add']].map(x=>`<div><b class="${x[2]?'w':''}">${x[0]}</b>${x[1]}</div>`).join('').replace(/(<div><b class="">👤.*?<\/div>)/,'$1<div><button class="ce" data-end="1">☎</button>End</div>')}<div><b>⠿</b>Keypad</div></div>`;
  q('#ph').appendChild(d);q('#sb').classList.remove('dk');q('#hb').classList.remove('dk');tone(440,.4,.04);
- const end=ms=>_st(()=>{if(d.isConnected){d.remove();app&&page(1)}},ms);
+ const end=ms=>_st(()=>{if(d.isConnected){d.remove();dn='';app&&page(1)}},ms);
  _st(()=>{if(!d.isConnected)return;const s=d.querySelector('.cs2');if(tx){s.textContent='"'+tx+'"';tone(520,.12,.04);if(lv>=3||(lv==2&&R()<.4))end(3800)}else{s.textContent='tidak dijawab…';end(2200)}},1800+R()*1800)};
 /* ---- nomor spesial (keypad): tiap isi array = satu bubble ---- */
 const IKLAN='langsung saja beli akun hanya di ryuiinite, cair cair';
