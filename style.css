@@ -459,5 +459,42 @@ html.inapp #hb{pointer-events:auto}
 .hpg{position:absolute;inset:0;display:flex;overflow-x:auto;overflow-y:hidden;scroll-snap-type:x mandatory;touch-action:pan-x;scrollbar-width:none}.hpg::-webkit-scrollbar{display:none}
 .hp{position:relative;flex:0 0 100%;height:100%;scroll-snap-align:start}
 .hdots{position:absolute;bottom:178px;left:0;right:0;display:flex;justify-content:center;gap:8px;pointer-events:none}.hdots i{width:7px;height:7px;border-radius:50%;background:rgba(255,255,255,.4)}.hdots i.on{background:#fff}
-.igc:has(>img)::before{content:"";position:absolute;top:0;left:0;right:0;height:50%;z-index:1;pointer-events:none;background:linear-gradient(#ffb3c9 0%,#ffb3c9 60%,#ffb3c900 100%)}
-#ph:not(.dm)[data-sv^=ig] #ap .igc:has(>img)::before{filter:invert(1) hue-rotate(180deg)}
+
+/* ===== Tema room shrain: meniru tampilan chat IG asli (warna dari screenshot) ===== */
+#ph[data-sv^=ig] #ap:has(.igc.shr),#ph[data-sv^=ig] #ap:has(.igc.shr) *{filter:none!important}
+#ph:has(.igc.shr) #sb{color:#37262a!important;text-shadow:none!important}
+#ph:has(.igc.shr) #hb i{background:#2e3c22!important;box-shadow:none!important}
+.igc.shr::before{content:"";position:absolute;left:0;right:0;top:0;height:38%;z-index:1;pointer-events:none;background:linear-gradient(#edc5ce,#edc5ce 17%,rgba(237,197,206,0))}
+.igc.shr::after{content:"";position:absolute;left:0;right:0;bottom:0;height:24%;z-index:1;pointer-events:none;background:linear-gradient(rgba(153,185,122,0),#99b97a 38%)}
+/* header */
+.igc.shr .igt{color:#000;padding-top:46px;height:90px}
+.igc.shr .igt button{color:#000!important}
+.igc.shr .igt .tt b{color:#231719}
+.igc.shr .igt .tt span{color:#6f626a}
+.igc.shr .igt .igdot{border-color:#edc5ce}
+.igc.shr .igm{top:90px}
+/* bubble: aku (kanan) & dia (kiri) */
+.igc.shr .igb2.m{background:#445133!important;color:#fff!important}
+.igc.shr .igb2.t{background:#efefef!important;color:#000!important}
+.igc.shr .igb2.qm{background:#c4d5b5!important;color:#4d5943!important}
+.igc.shr .igb2.qt{background:rgba(120,160,100,.7)!important;color:#e5f1dc!important}
+.igc.shr .igq2 i{background:rgba(255,255,255,.78)}
+/* bubble beruntun: sudut dalam kecil + jarak rapat */
+.igc.shr .igr.m+.igr.m,.igc.shr .igr.t+.igr.t{margin-top:-2px}
+.igc.shr .igr.m+.igr.m .igb2{border-top-right-radius:5px}
+.igc.shr .igr.m:has(+.igr.m) .igb2{border-bottom-right-radius:5px}
+.igc.shr .igr.t+.igr.t .igb2{border-top-left-radius:5px}
+.igc.shr .igr.t:has(+.igr.t) .igb2{border-bottom-left-radius:5px}
+/* label teks (Anda membalas, Dilihat, tanggal) */
+.igc.shr .iglb,.igc.shr .igsp{color:#000;text-shadow:none}
+.igc.shr .igr .tm{color:rgba(0,0,0,.55)}
+/* kolom ketik di bawah */
+.igc.shr .igi{padding-left:8px;padding-right:8px}
+.igc.shr .igpill{background:rgba(68,81,51,.23);-webkit-backdrop-filter:none;backdrop-filter:none;padding:5px}
+.igc.shr .igcam{width:37px;height:37px;background:#445133;color:#fff}
+.igc.shr .igcam circle{fill:#445133}
+.igc.shr .igf{color:#000!important;min-height:37px!important}
+.igc.shr .igf .pl{color:#606a56}
+.igc.shr .igf .cr{background:#445133}
+.igc.shr .igics{color:#000}
+.igc.shr .igs{color:#445133}
