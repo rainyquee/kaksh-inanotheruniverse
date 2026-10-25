@@ -95,9 +95,10 @@ callTo=function(n){const id=PE[n]?n:Object.keys(PE).find(k=>PE[k].num==String(n)
  _st(()=>{if(!d.isConnected)return;const s=d.querySelector('.cs2');if(tx){s.textContent='"'+tx+'"';tone(520,.12,.04);if(lv>=3||(lv==2&&R()<.4))end(3800)}else{s.textContent='tidak dijawab…';end(2200)}},1800+R()*1800)};
 /* ---- nomor spesial (keypad): tiap isi array = satu bubble ---- */
 const IKLAN='langsung saja beli akun hanya di ryuiinite, cair cair';
-const SPC={'112':['woi u bukan u es e napa nelpon kesini',IKLAN],
+const SPC={'112':['hello, butuh bantuan? dananya diambil wowo.',IKLAN],
  '110':['woi ada ape, ni nu ni nu.',IKLAN,'siap berangkat'],
  '123':['mau beli pulsa lo?',IKLAN],
+ '911':["hello what's your emergency, ur president is fucking wowo? go fuck urself",IKLAN],
  '191005':['makasih ya udah stalking ulang tahunku']};
 const _oc2=callTo;
 callTo=function(n){const k=String(n).replace(/\D/g,''),L=SPC[k];if(!L||PE[n])return _oc2(n);
