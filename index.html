@@ -831,8 +831,8 @@ const AVF={shrain:'23329-50kb.jpg','jo.elmrt':'23330-50kb.jpg',rainyquee:IGAVB.s
 const IGP=(i,w,blank,k)=>{if(k=='rainyquee')i=2;const F=!blank&&AVF[k];const c=[['#6b7a99','#3d4a66'],['#8a6a7a','#4d3040'],['#5f8f8a','#2e5350'],['#9a8a6a','#5a4a2e'],['#7a6a9a','#3c2e5a'],['#8f6a5f','#523228']][i%6],bg=blank?'#dcdee3':'linear-gradient('+c[0]+','+c[1]+')';return `<div class="iga" style="width:${w}px;height:${w}px;background:${bg}"><svg viewBox="0 0 24 24" width="${Math.round(w*.74)}" height="${Math.round(w*.74)}" fill="${blank?'#fff':'#ffffffb0'}"><circle cx="12" cy="8.2" r="4.4"/><path d="M3.2 22c.5-5.4 4.200-8 8.800-8s8.300 2.600 8.800 8z"/></svg>${F?`<img src="${IMGDIR}${F}" alt="" draggable="false" onerror="this.remove()" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover">`:''}</div>`};
 let IGRP=null;
 const IGM=[
-['m','aku juga ga suka cewe lain'],['lb','Anda membalas','r'],['q','line ajaa','m'],['m','okee'],['m','tapi mas lagi di kamar mandi, ntar dulu call nya'],
-['t','iya sayang'],['lb','Membalas Anda','l'],['q','aku juga ga suka cewe lain','t'],['t','iya iyaa'],['t','mandi dulu aja'],['t','kenapa bawa hp sih',1],['lb','Ketuk dua kali untuk ❤️','l2'],
+['m','aku juga ga suka cewe lain'],['lb','Anda membalas','r'],['q','line ajaa','m'],['m','okee'],['m','tapi mas lagi nugas, ntar dulu call nya'],
+['t','iya sayang'],['lb','Membalas Anda','l'],['q','aku juga ga suka cewe lain','t'],['t','iya iyaa'],['t','nugas dulu aja'],['t','ga perlu repot ngabarin kalo emang sibuk',1],['lb','Ketuk dua kali untuk ❤️','l2'],
 ['m','udah siap call?'],['lb','Dilihat','r'],['sp','2 OKT, 18.59'],['lb','Anda membalas ke ceritanya','r'],['q','Cerita tidak tersedia','m',1],['m','congrats!']];
 const IGBG0=`<svg viewBox="0 0 393 852" preserveAspectRatio="xMidYMid slice" style="position:absolute;inset:0;width:100%;height:100%"><defs><linearGradient id="igg" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#3a2a36"/><stop offset=".28" stop-color="#402c39"/><stop offset=".4" stop-color="#8f5a73"/><stop offset=".52" stop-color="#b8758f"/><stop offset=".78" stop-color="#b3718c"/><stop offset=".86" stop-color="#6f6a52"/><stop offset=".92" stop-color="#4a5b3b"/><stop offset="1" stop-color="#3f4c33"/></linearGradient></defs><rect width="393" height="852" fill="url(#igg)"/><path d="M118 250c-4 150-26 260-34 380-2 40 20 70 60 70h110c24-50 10-120 4-180-8-90 0-190 12-270z" fill="#5a3b2d" opacity=".9"/><g stroke="#ee7aa3" stroke-width="3.400" stroke-linecap="round" opacity=".85"><path d="M24 360l22-6M338 300l18-14M64 500l22 8M348 540l-14 20M252 660l8-26M300 420l-6 26M40 620l20 -4"/></g><g stroke="#68814f" stroke-width="2.600" stroke-linecap="round" opacity=".9">${Array.from({length:46},(_,i)=>`<path d="M${i*9} 852v-${60+(i*37%50)}"/>`).join('')}</g><g><circle cx="338" cy="760" r="16" fill="#8fa4d8"/><circle cx="338" cy="760" r="5" fill="#f3d36a"/><circle cx="22" cy="790" r="14" fill="#8fa4d8"/><circle cx="22" cy="790" r="4.500" fill="#f3d36a"/></g></svg>`;
 const IGBG=PIC('23283-50kb.jpg',IGBG0).replace('<img ','<img style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover" ');
@@ -1065,6 +1065,7 @@ addEventListener('touchend',()=>{s=null},true);
 #ph .k_nt.rw{box-shadow:none;background:none;-webkit-backdrop-filter:none;backdrop-filter:none}
 #ph .k_l .nc,#ph .bn .nc{color:#fff}#ph .k_l .nc .nh,#ph .k_l .nc .nb,#ph .bn .nc .nh,#ph .bn .nc .nb{color:#fff}#ph .k_l .nc small,#ph .bn .nc small{color:rgba(255,255,255,.62)}
 #ph .bn .nc{background:rgba(62,62,70,.62);box-shadow:var(--ge),0 8px 30px rgba(0,0,0,.25)}
+#ph .bn{top:54px}
 #ph .k_pc{background:rgba(176,140,50,.34)}
 #ph .k_k.on{background:rgba(255,255,255,.88)}
 #ph .k_u button.on{background:rgba(10,132,255,.88)}
