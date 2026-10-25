@@ -477,7 +477,7 @@ html.inapp #hb{pointer-events:auto}
 .igc.shr .igb2.m{background:#445133!important;color:#fff!important}
 .igc.shr .igb2.t{background:#efefef!important;color:#000!important}
 .igc.shr .igb2.qm{background:#c4d5b5!important;color:#4d5943!important}
-.igc.shr .igb2.qt{background:rgba(120,160,100,.7)!important;color:#e5f1dc!important}
+.igc.shr .igb2.qt{background:#6f8557!important;color:#e5f1dc!important}
 .igc.shr .igq2 i{background:rgba(255,255,255,.78)}
 /* bubble beruntun: sudut dalam kecil + jarak rapat */
 .igc.shr .igr.m+.igr.m,.igc.shr .igr.t+.igr.t{margin-top:-2px}
@@ -498,3 +498,29 @@ html.inapp #hb{pointer-events:auto}
 .igc.shr .igf .cr{background:#445133}
 .igc.shr .igics{color:#000}
 .igc.shr .igs{color:#445133}
+
+/* ===== Room shrain: versi MODE GELAP (aktif otomatis saat switch Dark Mode nyala) ===== */
+#ph.dm:has(.igc.shr) #sb{color:#f7f4f8!important}
+#ph.dm:has(.igc.shr) #hb i{background:#c8c8c6!important}
+#ph.dm .igc.shr::before{height:100%;background:linear-gradient(#3e2e39,#3e2e39 17%,rgba(62,46,57,0)) top/100% 38% no-repeat,linear-gradient(rgba(67,81,55,0),#435137 33%) bottom/100% 24% no-repeat,linear-gradient(rgba(60,26,38,.43),rgba(60,26,38,.43))}
+#ph.dm .igc.shr::after{display:none}
+#ph.dm .igc.shr .igt{color:#fff}
+#ph.dm .igc.shr .igt button{color:#fff!important}
+#ph.dm .igc.shr .igt .tt b{color:#fefdfe}
+#ph.dm .igc.shr .igt .tt span{color:#b2adb8}
+#ph.dm .igc.shr .igt .igdot{border-color:#3e2e39}
+#ph.dm .igc.shr .igb2.m{background:#feb5c8!important;color:#000!important}
+#ph.dm .igc.shr .igb2.t{background:#222023!important;color:#fff!important}
+#ph.dm .igc.shr .igb2.qm{background:#35382d!important;color:#aaada5!important}
+#ph.dm .igc.shr .igb2.qt{background:#a38481!important;color:#2a1815!important}
+#ph.dm .igc.shr .igq2 i{background:#d9d0d3}
+#ph.dm .igc.shr .iglb,#ph.dm .igc.shr .igsp{color:#fff}
+#ph.dm .igc.shr .igr .tm{color:rgba(255,255,255,.7)}
+#ph.dm .igc.shr .igpill{background:#616e52}
+#ph.dm .igc.shr .igcam{background:#feb5c8;color:#000}
+#ph.dm .igc.shr .igcam circle{fill:#ffb3c9}
+#ph.dm .igc.shr .igf{color:#fff!important}
+#ph.dm .igc.shr .igf .pl{color:#9ca196}
+#ph.dm .igc.shr .igf .cr{background:#feb5c8}
+#ph.dm .igc.shr .igics{color:#fff}
+#ph.dm .igc.shr .igs{color:#feb5c8}
