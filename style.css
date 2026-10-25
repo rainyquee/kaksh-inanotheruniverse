@@ -459,3 +459,4 @@ html.inapp #hb{pointer-events:auto}
 .hpg{position:absolute;inset:0;display:flex;overflow-x:auto;overflow-y:hidden;scroll-snap-type:x mandatory;touch-action:pan-x;scrollbar-width:none}.hpg::-webkit-scrollbar{display:none}
 .hp{position:relative;flex:0 0 100%;height:100%;scroll-snap-align:start}
 .hdots{position:absolute;bottom:178px;left:0;right:0;display:flex;justify-content:center;gap:8px;pointer-events:none}.hdots i{width:7px;height:7px;border-radius:50%;background:rgba(255,255,255,.4)}.hdots i.on{background:#fff}
+.igc>img+.igt::before{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(#ff8fb4cc,#ff8fb400)}
