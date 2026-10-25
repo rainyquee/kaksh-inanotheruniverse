@@ -544,3 +544,9 @@ html.inapp #hb{pointer-events:auto}
 #ph.dm .igc:not(.shr) .igb2.qt{background:#363636!important;color:#d0d0d0!important}
 #ph:not(.dm) .igc:not(.shr) .igpill{background:#101010}
 #ph:not(.dm) .igc:not(.shr) .igcam,#ph:not(.dm) .igc:not(.shr) .igs,#ph:not(.dm) .igc:not(.shr) .igf .cr{filter:invert(1) hue-rotate(180deg)}
+
+/* FIX blur Notification/Control Center: backdrop-filter di panel induk bikin kartu di dalamnya
+   (yang juga pakai backdrop-filter) ga bisa nge-blur wallpaper -> blur datar & aneh.
+   Blur dipindah ke ::before supaya kartu tetap glass beneran. */
+.k_p,#k_n{-webkit-backdrop-filter:none;backdrop-filter:none;background:none}
+.k_p::before{content:'';position:absolute;inset:0;z-index:-1;pointer-events:none;background:rgba(10,12,18,.28);-webkit-backdrop-filter:blur(28px) saturate(1.5);backdrop-filter:blur(28px) saturate(1.5)}
