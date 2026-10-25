@@ -386,7 +386,8 @@ html.inapp #hb{pointer-events:auto}
 #sb:not(.dk){text-shadow:0 0 3px rgba(0,0,0,.5),0 1px 2px rgba(0,0,0,.3)}
 #sb:not(.dk) svg{filter:drop-shadow(0 0 2px rgba(0,0,0,.55))}
 #hb:not(.dk) i{box-shadow:0 0 4px rgba(0,0,0,.4)}
-#ph.dm:not([data-sv=ig]):not([data-sv=igd]):not([data-sv=igc]):not([data-sv=igp]):not([data-sv=igcm]):not([data-sv=mus]) #ap{filter:invert(1) hue-rotate(180deg)}#ph.dm #ap img,#ph.dm #ap .pi,#ph.dm #ap .xg svg,#ph.dm #ap .ic,#ph.dm #ap video,#ph.dm #ap .pg.dk{filter:invert(1) hue-rotate(180deg)}#ph.dm:not([data-sv=ig]):not([data-sv=igd]):not([data-sv=igc]):not([data-sv=igp]):not([data-sv=igcm]):not([data-sv=mus]) #sb.dk{color:#fff}#ph.dm:not([data-sv=ig]):not([data-sv=igd]):not([data-sv=igc]):not([data-sv=igp]):not([data-sv=igcm]):not([data-sv=mus]) #hb.dk i{background:#fff}
+#ph.dm:not(.nd) #ap{filter:invert(1) hue-rotate(180deg)}#ph.dm:not(.nd) #ap img,#ph.dm:not(.nd) #ap .pi,#ph.dm:not(.nd) #ap .xg svg,#ph.dm:not(.nd) #ap .ic,#ph.dm:not(.nd) #ap video,#ph.dm:not(.nd) #ap .pg.dk{filter:invert(1) hue-rotate(180deg)}#ph.dm:not(.nd) #sb.dk{color:#fff}#ph.dm:not(.nd) #hb.dk i{background:#fff}
+#ph[data-sv^=ig].dm #ap,#ph[data-sv^=ig].dm #ap *{filter:none!important}
 </style>
 </head>
 <body>
@@ -402,7 +403,7 @@ html.inapp #hb{pointer-events:auto}
 </div>
 <button id="fs" aria-label="Layar penuh" title="Layar penuh">⛶</button>
 <script>
-setInterval(()=>{const p=document.getElementById('ph');p&&p.classList.toggle('dm',!!(window.CCST&&CCST.drk))},150);
+setInterval(()=>{const p=document.getElementById('ph');if(!p)return;p.classList.toggle('dm',!!(window.CCST&&CCST.drk));let nd=0;const ap=document.getElementById('ap');if(ap&&ap.style.display!=='none'){const r=p.getBoundingClientRect(),lum=(el)=>{while(el&&el!==document.documentElement){const m=getComputedStyle(el).backgroundColor.match(/[\d.]+/g);if(m&&(m.length<4||+m[3]>.5))return .299*m[0]+.587*m[1]+.114*m[2];el=el.parentElement}return 255},pt=y=>document.elementFromPoint(r.left+r.width*.04,r.top+r.height*y);nd=lum(pt(.45))<110&&lum(pt(.75))<110;if(/^ig/.test(p.dataset.sv||'')||ap.querySelector('.igd,.igc,.igdk,.igpd,.igt'))nd=1}p.classList.toggle('nd',nd)},150);
 let GEN=0;const _st=window.setTimeout.bind(window);window.setTimeout=(f,ms,...a)=>{const g=GEN;return _st(()=>{if(g===GEN)f(...a)},ms)};
 const KEY='pinggir-halaman-v3';let PEND=null,NOSAVE=0,EN=0,bf='';const PK=[];
 const PIN='2311',PIN2='2309',CODE='214',$=q=>document.querySelector(q);
@@ -524,7 +525,7 @@ const clk=()=>{const d=new Date();return(d.getHours()%12||12)+':'+String(d.getMi
 const sb=dk=>{$('#sb').classList.toggle('dk',dk);$('#hb').classList.toggle('dk',dk)};
 const ico=k=>`<div class="ic">${IC[k]}</div>`;
 function lock(){lock_();const n=$('#nl .nc');if(n)swp(n)}
-function lock_(){$('#lk').innerHTML=`<div class="ld">Wednesday, December 16</div><div class="lt" id="lt">${clk()}</div><div class="lg"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9.5"/><ellipse cx="12" cy="12" rx="4" ry="9.5"/><path d="M2.5 12h19M4 7.5h16M4 16.5h16"/></svg>Bahasa Indonesia</div><div id="nl"></div><div class="lb" style="left:46px"><svg viewBox="0 0 24 24"><path d="M9 3h6l-.8 4h-4.4zM9.8 7v13a2 2 0 0 0 4.4 0V7"/><path d="M12 11v3"/></svg></div><div class="lb" style="right:46px"><svg viewBox="0 0 24 24"><path d="M3.5 8.5a2 2 0 0 1 2-2h2l1.3-2h6.4l1.3 2h2a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2h-13a2 2 0 0 1-2-2z"/><circle cx="12" cy="13" r="3.8"/></svg></div><div class="hint">Geser ke atas untuk membuka</div>`;window.lockNL&&lockNL()}
+function lock_(){$('#lk').innerHTML=`<div class="ld">Wednesday, December 16</div><div class="lt" id="lt">${clk()}</div><div class="lg"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9.5"/><ellipse cx="12" cy="12" rx="4" ry="9.5"/><path d="M2.5 12h19M4 7.5h16M4 16.5h16"/></svg>English</div><div id="nl"></div><div class="lb" style="left:46px"><svg viewBox="0 0 24 24"><path d="M9 3h6l-.8 4h-4.4zM9.8 7v13a2 2 0 0 0 4.4 0V7"/><path d="M12 11v3"/></svg></div><div class="lb" style="right:46px"><svg viewBox="0 0 24 24"><path d="M3.5 8.5a2 2 0 0 1 2-2h2l1.3-2h6.4l1.3 2h2a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2h-13a2 2 0 0 1-2-2z"/><circle cx="12" cy="13" r="3.8"/></svg></div><div class="hint">Swipe up to unlock</div>`;window.lockNL&&lockNL()}
 function pad(){const L=['','ABC','DEF','GHI','JKL','MNO','PQRS','TUV','WXYZ'];$('#pn').innerHTML=`<div class="pt">Enter Passcode</div><div class="pd" id="pd">${[0,1,2,3].map(i=>`<i class="${i<pin.length?'on':''}"></i>`).join('')}</div><div class="pk">${[1,2,3,4,5,6,7,8,9].map(n=>`<button data-k="${n}"><b>${n}</b><small>${L[n-1]}</small></button>`).join('')}<span></span><button data-k="0"><b>0</b><small></small></button><span></span></div><div class="pb"><button>Darurat</button><button data-a="cancel">${pin?'Hapus':'Cancel'}</button></div>`}
 let pdT=0;
 function padUp(){document.querySelectorAll('#pd i').forEach((x,i)=>x.classList.toggle('on',i<pin.length));const c=document.querySelector('#pn [data-a="cancel"]');if(c)c.textContent=pin?'Hapus':'Cancel'}
@@ -697,7 +698,7 @@ if(b=q('[data-n]')){cur=+b.dataset.n;if(nt[cur].lock)alertCode();else{sv='nd';pa
 if(b=q('[data-x]')){if(b.dataset.x=='0'){$('.al').remove();closeKb();return}chkCode();return}
 if(b=q('[data-e]')){if(done||st<LIVE.length)return;const e=+b.dataset.e;if(e==1)sendLetter();else if(e==2)endG(2);else callTo('rai');return}
 if(0){v='pin';pin='';$('#wall').classList.add('dim');$('#lk').querySelectorAll('.ld,.lt,.lg,#nl,.lb,.hint').forEach(x=>x.style.visibility='hidden');const p=$('#pn');p.style.display='flex';pad();p.animate([{opacity:0,transform:'translateY(40px)'},{opacity:1,transform:'none'}],{duration:400,easing:'cubic-bezier(.2,.9,.25,1)'})}});
-$('#hb').onclick=()=>{if(app)closeApp()};
+$('#hb').onclick=()=>{if(window.PN&&PN())return;if(app)closeApp()};
 function showPin(){v='pin';pin='';const l=$('#lk');l.querySelectorAll('.ld,.lt,.lg,#nl,.lb,.hint').forEach(x=>x.style.visibility='hidden');l.style.transform='';l.style.opacity='';$('#wall').classList.add('dim');const p=$('#pn');p.style.display='flex';pad();tone(1100,.06,.03);p.animate([{opacity:0,transform:'translateY(70px)'},{opacity:1,transform:'none'}],{duration:480,easing:'cubic-bezier(.2,.9,.25,1)'})}
 (function(){const lk=$('#lk'),wl=$('#wall');let s=null,dy=0;
 addEventListener('pointerdown',e=>{s=null;if(v!='lock'||(e.pointerType=='mouse'&&e.button!==0)||e.target.closest('.nc,#nl'))return;const r=$('#ph').getBoundingClientRect();if(e.clientX<r.left||e.clientX>r.right||e.clientY>r.bottom||e.clientY<r.top+r.height*.45)return;s={y:e.clientY,z:r.height/852};dy=0;wl.style.transition='none';lk.style.transition='none'},true);
@@ -709,7 +710,7 @@ setInterval(()=>{$('#cl').textContent=clk();const l=$('#lt');if(l)l.textContent=
 const fsb=document.getElementById('fs'),de=document.documentElement,rf=de.requestFullscreen||de.webkitRequestFullscreen,fe=()=>document.fullscreenElement||document.webkitFullscreenElement;
 if(!rf||document.fullscreenEnabled===false)fsb.style.display='none';
 /* fullscreen: gestur kembali HP tidak boleh mengeluarkan dari fullscreen, hanya kembali di dalam web */
-let fsWant=0,fsBtn=0;const fsCoarse=('ontouchstart' in window)||navigator.maxTouchPoints>0||!!(window.matchMedia&&matchMedia('(pointer:coarse)').matches);let fsEsc=0;addEventListener('keydown',e=>{if(e.key=='Escape')fsEsc=Date.now()},true);addEventListener('popstate',()=>{window._pp=Date.now();if(window._g2&&window._closeA){window._g2=0;window._closeA()}},true);
+let fsWant=0,fsBtn=0;const fsCoarse=('ontouchstart' in window)||navigator.maxTouchPoints>0||!!(window.matchMedia&&matchMedia('(pointer:coarse)').matches);let fsEsc=0;addEventListener('keydown',e=>{if(e.key=='Escape')fsEsc=Date.now()},true);addEventListener('popstate',e=>{window._pp=Date.now();if(window._sw){window._sw=0;e.stopImmediatePropagation();return}if(window._p2&&window.PN&&PN()){window._p2=0;e.stopImmediatePropagation();window._closeP();return}if(window._g2&&window._closeA){window._g2=0;window._closeA()}},true);
 const fsGo=()=>{if(fsWant&&rf&&!fe()){try{const p=rf.call(de);p&&p.catch&&p.catch(()=>{})}catch(_){}}};
 fsb.onclick=()=>{try{if(fe()){fsBtn=1;fsWant=0;(document.exitFullscreen||document.webkitExitFullscreen).call(document)}else{fsWant=1;const p=rf.call(de);p&&p.catch&&p.catch(()=>{fsWant=0;fsb.style.display='none'})}}catch(e){fsb.style.display='none'}};
 ['fullscreenchange','webkitfullscreenchange'].forEach(n=>document.addEventListener(n,()=>{fsb.textContent=fe()?'✕':'⛶';fit();if(fe()){fsWant=1;return}if(fsBtn){fsBtn=0;return}if(Date.now()-fsEsc<400){fsWant=0;return}if(fsWant&&fsCoarse){if(app&&Date.now()-(window._eb||0)>800&&Date.now()-(window._pp||0)>500)history.back();fsGo();setTimeout(fsGo,60);setTimeout(fsGo,250)}}));
@@ -802,13 +803,7 @@ if(k=='set'){const C=[['#5856d6','☾'],['#ff3b30','🔔'],['#af52de','◐'],['#
 return `<div class="sk">${nav('','Home')}<div class="sc"><div class="big">Settings</div><div class="sq">⌕ Cari</div><div class="pf"><div class="av" style="position:relative;overflow:hidden">R<img src="${IMGDIR}23328-50kb.jpg" alt="" draggable="false" onerror="this.remove()" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover"></div><div><b>Raihan</b><small>Akun, iCloud, Media & Pembelian</small></div></div><div class="grp">${r.map((a,i)=>`<div class="sr"><div class="si" style="background:${C[i][0]}">${C[i][1]}</div><b>${a[0]}</b><span>${a[1]} ›</span></div>`).join('')}</div></div></div>`}
 if(k=='mus')return `<div class="sk">${nav('','Home')}<div class="sc"><div class="big">Lagu</div><div class="mt"><button data-mp="play">▶ Putar</button><button data-mp="shuf">⤮ Acak</button></div>${r.map((a,i)=>{const on=window.MUS&&MUS.i==i&&MUS.on;return `<button class="ms" data-mu="${i}"><i style="background:linear-gradient(${P[i%4]},#222);position:relative;overflow:hidden">♪<img src="${IMGDIR}${COV[i]||''}" alt="" draggable="false" onerror="this.remove()" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover"></i><div><b${window.MUS&&MUS.i==i&&MUS.ld?' style="color:#ff3b5c"':''}>${a[0]}</b><small>${a[1].replace(/ · .*/,'')}</small></div><em${on?' style="color:#ff3b5c;letter-spacing:0"':''}>${on?'❚❚':'•••'}</em></button>`}).join('')}</div></div>`;
 return `<div class="sk">${nav('','Home')}<div class="sc"><div class="big">${t}</div><div class="sq">⌕ Cari</div><div class="grp">${r.map(a=>`<button class="nr" style="padding:8px 16px"><div class="cpt"><b>${a[0]}</b><small>${a[1]}</small></div></button>`).join('')}</div></div></div>`}
-(()=>{const w=$('#wall'),R=Math.random,P=['#ffd9a3','#f4b87c','#ffe9c9','#cfe0ff','#e9a8cf','#b9a6ff','#fff3df','#9fd0ff'];let h='',q='';
-for(let i=0;i<260;i++)q+=`${R()*393|0}px ${R()*852|0}px 0 ${R()<.15?1:0}px rgba(255,${230+R()*25|0},${210+R()*45|0},${(.25+R()*.7).toFixed(2)}),`;
-h+=`<i style="position:absolute;left:0;top:0;width:1px;height:1px;box-shadow:${q.slice(0,-1)}"></i>`;
-const g=(x,y,s,a,c,o)=>`<i style="position:absolute;left:${x-s/2}px;top:${y-s*a/2}px;width:${s}px;height:${s*a}px;border-radius:50%;background:radial-gradient(ellipse,${c} 0%,${c}${o?'99':'66'} 28%,transparent 70%);transform:rotate(${R()*180|0}deg)"></i>`;
-for(let i=0;i<120;i++)h+=g(R()*393,R()*852,3+R()*R()*16,.3+R()*.7,P[R()*P.length|0],R()<.4);
-[[60,150,70,.8,'#f2b36a'],[240,120,34,.7,'#b8d6d0'],[150,60,30,.6,'#e6d8b5'],[200,395,44,.9,'#f6c58b'],[55,300,36,.5,'#f0e0c0'],[270,450,56,.4,'#f7d6a0'],[210,600,34,.9,'#f1c688'],[250,650,30,.5,'#e7e0f2'],[40,700,32,.8,'#d9e3f3'],[330,640,30,.9,'#f0cfaa']].forEach(a=>h+=g(a[0],a[1],a[2],a[3],a[4],1));
-w.style.background='#07050b';w.insertAdjacentHTML('afterbegin',h+'<img src="'+IMGDIR+'23340-50kb.jpg" alt="" draggable="false" onerror="this.remove()" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover">')})();
+(()=>{const w=$('#wall');w.style.background='#07050b';w.insertAdjacentHTML('afterbegin','<img src="'+IMGDIR+'23340-50kb.jpg" alt="" draggable="false" onerror="this.remove()" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover">')})();
 (function(){let s=null;try{s=JSON.parse(localStorage.getItem(KEY))}catch(e){}if(s&&s.v=='home')PEND=s})();
 /* desain ulang aplikasi mengikuti screenshot referensi */
 (function(){
@@ -1002,9 +997,9 @@ document.addEventListener('click',e=>{const b=e.target.closest('.bn');if(!b||b.d
 
 /* geser dari pojok kiri/kanan layar = kembali (selain gestur kembali bawaan HP) */
 (function(){let s=null,fired=0;const ph=()=>document.getElementById('ph');
-function go(){fired=1;s=null;window._eb=Date.now();if(!app){if(window.GA&&GA()){try{tone(900,.03,.02)}catch(_){}window._closeA()}return}{const lp=document.querySelector('#ph .lpo');if(lp){lp.remove();return}}if(kbo){try{tone(900,.03,.02)}catch(_){}closeKb();return}if(document.querySelector('#ph .cl,#ph .al,#ph .en'))return;const bk=document.querySelector('#ap [data-b]');try{tone(900,.03,.02)}catch(_){}if(bk)bk.click();else back()}
+function go(){fired=1;s=null;window._eb=Date.now();if(window.PN&&PN()){try{tone(900,.03,.02)}catch(_){}window._closeP();return}if(!app){if(window.GA&&GA()){try{tone(900,.03,.02)}catch(_){}window._closeA()}return}{const lp=document.querySelector('#ph .lpo');if(lp){lp.remove();return}}if(kbo){try{tone(900,.03,.02)}catch(_){}closeKb();return}if(document.querySelector('#ph .cl,#ph .al,#ph .en'))return;const bk=document.querySelector('#ap [data-b]');try{tone(900,.03,.02)}catch(_){}if(bk)bk.click();else back()}
 function chk(e){if(!s||fired)return;const dx=(e.clientX-s.x)*s.d,dy=Math.abs(e.clientY-s.y);if(dx>=50&&dy<=dx*.8)go()}
-addEventListener('pointerdown',e=>{s=null;fired=0;if((!app&&!(window.GA&&GA()))||(e.pointerType=='mouse'&&e.button!==0))return;const r=ph().getBoundingClientRect();if(e.clientY<r.top||e.clientY>r.bottom)return;const z=Math.max(44,Math.min(64,r.width*.14)),L=e.clientX-r.left,R=r.right-e.clientX;if(L>=-20&&L<=z)s={x:e.clientX,y:e.clientY,d:1};else if(R>=-20&&R<=z)s={x:e.clientX,y:e.clientY,d:-1}},true);
+addEventListener('pointerdown',e=>{s=null;fired=0;if((!app&&!(window.GA&&GA())&&!(window.PN&&PN()))||(e.pointerType=='mouse'&&e.button!==0))return;const r=ph().getBoundingClientRect();if(e.clientY<r.top||e.clientY>r.bottom)return;const z=Math.max(44,Math.min(64,r.width*.14)),L=e.clientX-r.left,R=r.right-e.clientX;if(L>=-20&&L<=z)s={x:e.clientX,y:e.clientY,d:1};else if(R>=-20&&R<=z)s={x:e.clientX,y:e.clientY,d:-1}},true);
 addEventListener('pointermove',chk,true);
 addEventListener('pointerup',e=>{chk(e);s=null},true);
 addEventListener('pointercancel',()=>{s=null},true);
@@ -1195,9 +1190,9 @@ const tl=(k,rm)=>{const[id,ic,lb,sb,z]=k;return `<button class="k_k ${z=='r'?'r'
 const cb=(id,ic,c)=>`<button class="${st[id]?'on '+(c||''):''}" data-kt="${id}"><i>${ic}</i></button>`;
 function ccr(){const on=K.filter(k=>!st.off[k[0]]),off=K.filter(k=>st.off[k[0]]),m=M[mi],e=st.edit;
  CC.innerHTML=`<div class="k_e"><button class="k_cl" data-kc="edit" aria-label="Edit kontrol">${e?'✓':'+'}</button><span>${e?'Edit Kontrol':''}</span></div><div class="k_g"><div class="k_m">${art(m,84)}<div><b>${m.t}</b><small>${m.a}</small><div class="k_pr"><i style="width:${pos/m.L*100}%"></i></div><div class="k_cn">${[['pv','pv'],['pp',play?'ps':'pl'],['nx','nx']].map(a=>`<button data-ka="${a[0]}">${S(G[a[1]],a[0]=='pp'?34:26)}</button>`).join('')}</div></div></div>${on.filter(k=>k[5]).map(k=>tl(k,e)).join('')}<div class="k_s" data-ks="br"><i style="height:${st.br}%"></i><b>☀</b></div><div class="k_u">${cb('air','✈','or')}${cb('cell','📶')}${cb('wifi','📡')}${cb('bt','ᛒ')}</div><div class="k_s" data-ks="vol"><i style="height:${st.vol}%"></i><b>🔊</b></div>${on.filter(k=>!k[5]).map(k=>tl(k,e)).join('')}</div>${e&&off.length?`<div class="k_h">Tambah kontrol</div><div class="k_g">${off.map(k=>tl(k)).join('')}</div>`:''}`}
-function open(k){if(pn)return;pn=k;wasDk=SB.classList.contains('dk');SB.classList.remove('dk');k=='n'?ncr():ccr();(k=='n'?N:CC).classList.add('o')}
-function close(){if(!pn)return;N.classList.remove('o');CC.classList.remove('o');pn=0;st.edit=0;wasDk&&SB.classList.add('dk')}
-function tg(id){
+function open(k){if(pn)return;pn=k;try{history.pushState({p:1},'')}catch(_){}window._p2=1;wasDk=SB.classList.contains('dk');SB.classList.remove('dk');k=='n'?ncr():ccr();(k=='n'?N:CC).classList.add('o')}
+function close(){if(!pn)return;if(window._p2){window._p2=0;window._sw=1;try{history.back()}catch(_){}}N.classList.remove('o');CC.classList.remove('o');pn=0;st.edit=0;wasDk&&SB.classList.add('dk')}
+window.PN=()=>pn;window._closeP=close;function tg(id){
  if(id=='qr'||id=='shz')return;
  if(id=='cam'){close();if(typeof app!='undefined'&&!app&&typeof openApp=='function'){const el=q('#hm [data-o="cam"]');el&&openApp('cam',el)}return}
  if(id=='chg')setChg(!st.chg);else if(id=='sil'){st.sil^=1;flash('sil',2200)}else st[id]=+!st[id];
@@ -1217,7 +1212,7 @@ document.addEventListener('pointerdown',e=>{const z=e.target.closest('#k_z b');i
 addEventListener('pointermove',e=>{if(!g)return;const d=e.clientY-g.y;if(!g.o&&d>28){open(g.k);g=null}else if(g.o&&d<-60){close();g=null}},true);
 addEventListener('pointerup',()=>{g=null},true);addEventListener('pointercancel',()=>{g=null},true);
 document.addEventListener('pointerdown',e=>{const s=e.target.closest('.k_pr');if(!s)return;e.preventDefault();const set=ev=>{const r=s.getBoundingClientRect();pos=Math.max(0,Math.min(1,(ev.clientX-r.left)/r.width))*(M[mi].L-.05);if(ld==mi)try{AU.currentTime=pos}catch(_){}document.querySelectorAll('.k_pr i').forEach(i=>i.style.width=pos/M[mi].L*100+'%')};set(e);const up=()=>{removeEventListener('pointermove',set);removeEventListener('pointerup',up);removeEventListener('pointercancel',up)};addEventListener('pointermove',set);addEventListener('pointerup',up);addEventListener('pointercancel',up)},true);
-q('#hb').addEventListener('click',e=>{if(pn){e.stopPropagation();e.preventDefault();close()}},true);
+q('#hb').addEventListener('click',e=>{if(pn){e.stopImmediatePropagation();e.preventDefault();close()}},true);
 /* panggilan, notifikasi masuk */
 new MutationObserver(ms=>{for(const m of ms){
  m.addedNodes.forEach(n=>{if(n.nodeType!=1)return;
