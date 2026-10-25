@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <meta name="theme-color" content="#000">
-<meta name="appl-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="black">
 <meta name="apple-mobile-web-app-title" content="Pinggir Halaman">
@@ -19,6 +19,9 @@ html{height:100%;scroll-padding-top:env(safe-area-inset-top,0px)}
 *{box-sizing:border-box;-webkit-tap-highlight-color:transparent;user-select:none}
 body{margin:0;height:100%;background:var(--bg);display:grid;place-items:center;overflow:hidden}
 button,input{font:inherit;color:inherit;border:0;background:none;cursor:pointer;padding:0;letter-spacing:inherit}
+button:focus-visible,input:focus-visible{outline:2px solid var(--blu);outline-offset:2px}
+svg{display:block}
+#ph{position:relative;width:393px;height:852px;border-radius:58px;overflow:hidden;background:#000;transform-origin:center;box-shadow:0 0 0 10px #121214,0 0 0 12px #3b3b40,0 40px 80px #0009}
 .L{position:absolute;inset:0}
 #wall{background:radial-gradient(circle at 25% 18%,#34697f,transparent 55%),radial-gradient(circle at 85% 92%,#d1812f,transparent 50%),#0e1822;transition:filter .4s,transform .4s}
 #wall.dim{filter:blur(22px) brightness(.65);transform:scale(1.1)}
