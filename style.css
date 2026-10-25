@@ -524,3 +524,23 @@ html.inapp #hb{pointer-events:auto}
 #ph.dm .igc.shr .igf .cr{background:#feb5c8}
 #ph.dm .igc.shr .igics{color:#fff}
 #ph.dm .igc.shr .igs{color:#feb5c8}
+
+/* ===== Room SELAIN shrain: tampilan IG polos (biru/abu), tanpa pink-hijau tema shrain ===== */
+.igc:not(.shr) .igb2.m{background:#3797f0!important;color:#fff!important}
+.igc:not(.shr) .igt .tt span{color:#8e8e8e}
+.igc:not(.shr) .iglb,.igc:not(.shr) .igsp{color:#8e8e8e;text-shadow:none}
+.igc:not(.shr) .igr .tm{color:#8e8e8e}
+.igc:not(.shr) .igq2 i{background:#8e8e8e}
+.igc:not(.shr) .igpill{background:#262626;-webkit-backdrop-filter:none;backdrop-filter:none}
+.igc:not(.shr) .igcam{background:#3797f0;color:#fff}
+.igc:not(.shr) .igcam circle{fill:#3797f0}
+.igc:not(.shr) .igf .pl{color:#8e8e8e}
+.igc:not(.shr) .igf .cr{background:#3797f0}
+.igc:not(.shr) .igs{color:#3797f0}
+.igc:not(.shr) .igrp{background:#262626}
+.igc:not(.shr) .igrp span{color:#a8a8a8}
+#ph.dm .igc:not(.shr) .igb2.t{background:#262626!important;color:#fff!important}
+#ph.dm .igc:not(.shr) .igb2.qm{background:#2a2a2a!important;color:#c7c7c7!important}
+#ph.dm .igc:not(.shr) .igb2.qt{background:#363636!important;color:#d0d0d0!important}
+#ph:not(.dm) .igc:not(.shr) .igpill{background:#101010}
+#ph:not(.dm) .igc:not(.shr) .igcam,#ph:not(.dm) .igc:not(.shr) .igs,#ph:not(.dm) .igc:not(.shr) .igf .cr{filter:invert(1) hue-rotate(180deg)}
