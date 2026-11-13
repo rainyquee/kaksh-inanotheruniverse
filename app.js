@@ -1,87 +1,86 @@
 setInterval(()=>{const p=document.getElementById('ph');if(!p)return;p.classList.toggle('dm',!!(window.CCST&&CCST.drk));let nd=0;const ap=document.getElementById('ap');if(ap&&ap.style.display!=='none'){const r=p.getBoundingClientRect(),lum=(el)=>{while(el&&el!==document.documentElement){const m=getComputedStyle(el).backgroundColor.match(/[\d.]+/g);if(m&&(m.length<4||+m[3]>.5))return .299*m[0]+.587*m[1]+.114*m[2];el=el.parentElement}return 255},pt=y=>document.elementFromPoint(r.left+r.width*.04,r.top+r.height*y);nd=lum(pt(.45))<110&&lum(pt(.75))<110;if(/^ig/.test(p.dataset.sv||'')||ap.querySelector('.igd,.igc,.igdk,.igpd,.igt'))nd=1}p.classList.toggle('nd',nd)},150);
 let GEN=0;const _st=window.setTimeout.bind(window);window.setTimeout=(f,ms,...a)=>{const g=GEN;return _st(()=>{if(g===GEN)f(...a)},ms)};
-const KEY='pinggir-halaman-v3';let PEND=null,NOSAVE=0,EN=0,bf='';const PK=[];
+const KEY='pinggir-halaman-v4';let PEND=null,NOSAVE=0,EN=0,bf='';const PK=[];
 const PIN='2311',PIN2='2309',CODE='214',$=q=>document.querySelector(q);
 const B=[
-{h:'Bab 1 · Jumat, 4 September',t:['halo. ini Sh, kakak tingkatmu di sastra. tadi pak dedi kasih nomormu','kamu yang kemarin balikin “Rumah di Ujung Jalan”, kan?'],
- c:[['iya kak, saya. ada apa ya?','',['sebelum kaget: aku nggak lagi marah','cuma ada urusan sama bukunya']],
-    ['waduh, aku salah apa kak?','',['wkwk santai. salahnya nggak sendirian kok']]]},
-{t:['jadi tahun lalu aku pinjam buku itu dan nyoret pinggirnya pakai pensil. kebiasaan jelek, aku tau','bulan lalu kamu pinjam, dan kamu bales coretanku. di halaman 41 kamu nulis “ini kalimat paling jujur di buku ini”','pak dedi nunjukin itu ke aku. aku baca tiga kali di depan dia'],
- c:[['maaf kak. kukira itu catatan penerbit','j1',['catatan penerbit dari mana, rai. tulisanku miring dan ada gambar kucingnya']],
-    ['aku emang sengaja bales kak. tulisan kakak enak dibaca','d1',['...oke. jawaban jujur yang bikin aku susah marah']]]},
-{t:['intinya surat bebas pustakaku ditahan sampai urusan buku ini beres','aku butuh itu buat daftar wisuda. batasnya 9 oktober','besok bisa ke perpus lantai 2? pak dedi mau ketemu kita berdua'],
- c:[['bisa kak. aku ikut tanggung jawab','d1 j1',['makasih ya. jam 10 aku udah di sana']],
-    ['bisa. kabarin aja aku disuruh ngapain','',['siap. jam 10 ya, jangan telat']]]},
-{h:'Bab 2 · Sabtu, 5 September',n:1,s:'Perpustakaan lantai 2. Pak Dedi menaruh dua penghapus di meja. Pilihannya: hapus semua coretan pensil, atau ganti buku itu dengan satu eksemplar baru seharga 89 ribu. Jawabannya paling lambat hari Senin.',
- t:['sampai kos aku mikir terus','63 coretan. aku hitung dua kali tadi','jadi gimana? senin harus jawab pak dedi'],
- c:[['hapus aja kak, biar cepet kelar','',['oke. kita mulai senin sore, aku bawa penghapus sendiri, punya perpus keras banget','pelan-pelan aja ya. ada beberapa yang aku sayang']],
-    ['beli bukunya aja kak. buku itu kita simpan','K1 d1',['kamu serius?','yaudah. tapi bayarnya dibagi dua. jangan sok kaya, kamu anak kos']]]},
-{t:['btw tadi seru juga. kita ngobrol dua jam padahal cuma ada satu buku','kamu nulis juga nggak sih? tulisanmu rapi banget'],
- c:[['sering nulis cerpen kak. nggak pernah kuselesein','j1',['kenapa nggak diselesein?','ah, takut jelek ya. sama']],
-    ['nggak kak. aku cuma suka bales tulisan orang','d1',['itu juga bakat tau. bales yang bener itu susah']]]},
-{h:'Bab 3 · Kamis, 10 September',s:'Lima hari setelah hari penghapus. Bukunya masih di rak, halaman 41 masih utuh.',t:['aku nemu coretan baru di halaman 58. bukan punyaku, bukan punyamu','tulisannya rapi banget: “siapa pun kamu, jangan berhenti baca”','menurutmu itu pesan buat siapa?'],
- c:[['buat kita berdua, kak. siapa lagi yang minjem buku ini','d1',['aku juga mikir gitu. tapi nggak berani bilang duluan','kalau ternyata bukan buat kita, ya sudah. kita yang ngartiin sendiri']],
-    ['mungkin penulis lama kak. tapi bagus buat dibaca ulang','j1',['hehe kamu hati-hati banget ya','nggak apa-apa. aku suka orang yang nggak asal yakin']]]},
-{h:'Bab 4 · Kamis, 17 September',t:['rai, revisi skripsiku acc!!','pak dedi nitip salam, katanya kamu jadi sering ke perpus','mau kutraktir es kopi susu depan gedung? bukan sogokan'],
- c:[['boleh banget kak. sogokan juga diterima','d1',['dasar']],
-    ['aku aja yang traktir kak, selamat ya','d1',['wah. oke, aku kalah start']]]},
-{s:'Kopi susu di bangku depan perpustakaan. Obrolannya melebar sampai magrib.',t:['tadi aku belum bilang ya. aku keterima kerja di balikpapan, mulai 2 november','belum ada yang tau selain ayah sama ibu. kamu orang ketiga'],
- c:[['selamat kak! berarti bentar lagi pindah ya','j1',['iya, bentar lagi. makanya aku lagi sibuk nyicil banyak hal, termasuk ngobrol sama kamu']],
-    ['kok kakak cerita ke aku?','d1',['karena kamu satu-satunya yang nanya soal tulisanku, bukan soal gajinya']]]},
-{t:['aneh nggak sih, baru kenal dua minggu tapi aku udah bingung bakal kangen siapa duluan','besok kamu ada kelas pagi nggak?'],
- c:[['ada kak. tapi aku bisa ngobrol sampe subuh','d1',['jangan. nanti aku yang ngerasa bersalah']],
-    ['ada. tidur gih kak, udah malem','j1',['ih rai. iya iya, tidur']]]},
-{h:'Bab 5 · Kamis, 24 September',s:'Hujan dari sore. Sh nugas di lantai 2 sampai perpustakaan tutup.',t:['kamu masih bangun? aku kejebak hujan di depan perpus','payung kemarin ketinggalan di kos. bodoh banget'],
- c:[['aku ke sana bawa payung, kak. tunggu','d1',['serius? jangan, nanti kamu basah juga','...tapi oke. aku tunggu di tangga','makasih ya. jarang ada yang mau repot buat hal sepele']],
-    ['tunggu reda aja kak, nanti aku temenin lewat chat','j1',['ide bagus. ceritain apa aja biar nggak bosen','tentang apa pun asal bukan skripsi']]]},
-{h:'Bab 6 · Sabtu, 3 Oktober',s:'Enam belas hari setelah kopi susu itu, kalian sudah hafal jam kosong masing-masing.',t:['rai, aku mau tanya. jawab jujur ya, jangan yang manis aja','kita ini apa sih? aku nggak mau nebak-nebak kayak soal ujian'],
- c:[['aku suka kakak. dari halaman 41','d2 j1',['...oke','aku nggak nyangka bakal sesenang ini dibilangin lewat chat','aku juga. dari halaman 41 juga']],
-    ['temenan dulu aja kak. aku takut ngerusak','F1',['...oh. oke','alasanmu masuk akal. tapi aku sedikit sedih, sedikit doang']]]},
-{t:['ada yang harus kamu tau. aku berangkat 1 november','dan ayahku orangnya kaku. dari dulu bilangnya: yang deketin anak ayah harus berani ketemu langsung. nggak lewat chat, nggak lewat titip salam'],
- c:[['aku nggak keberatan kak. kalau perlu aku yang nyamperin','d1',['jangan ngomong gitu kalau belum yakin ya']],
-    ['aku mikir dulu ya kak. jujur aku agak keder','j1',['makasih udah jujur. aku juga bakal keder']]]},
-{h:'Bab 7 · Rabu, 7 Oktober',s:'Sh bilang malam ini dia mau cerita sesuatu yang belum pernah dia ceritain.',t:['ayahku di Balikpapan. kerja di kilang, jarang pulang, jarang telepon','dia sering bilang sastra itu hobi, bukan kerjaan','makanya aku ngumpet di pinggir halaman buku. di sana aku boleh salah'],
- c:[['kamu nggak salah kak. coretanmu bagus','d1',['kamu bilang gitu seolah gampang','tapi makasih. aku simpan kalimat itu','minggu depan ayah beli tiket. dia mau lihat wisudaku']],
-    ['mungkin ayah kakak belum tahu cara bilangnya','j1',['iya. mungkin','dia bukan jahat, cuma nggak pernah belajar caranya','minggu depan dia beli tiket. mau lihat wisudaku']]]},
-{h:'Bab 8 · Sabtu, 10 Oktober',s:'Kos Sh, jam sebelas malam. Dia kirim foto buku yang dipangku di atas kasur.',t:['halaman 41 aku fotokopi. aslinya aku nggak mau pisah','kalau suatu hari kita beneran harus beda kota, kamu mau nulis di pinggir halaman yang sama?'],
- c:[['mau. aku nulis di pinggir, kakak nulis di tengah','d1',['hahaha itu kalimat paling manis minggu ini','aku catat. pakai pensil, biar bisa kamu bantah']],
-    ['kita lihat nanti ya kak, jangan janji dulu','F1',['oh. oke','nggak apa-apa. aku cuma nanya','aku tidur dulu']]]},
-{h:'Bab 9 · Rabu, 14 Oktober',s:'Seminggu penuh UTS. Kamu cuma membalas chat Sh dengan stiker.',t:['rai, kamu ngilang tiga hari','aku ngerti UTS. tapi stiker doang? kayak ngobrol sama kulkas'],
- c:[['maaf kak. aku panik soal ujian, kakak juga mau pergi, kepalaku penuh','j2',['makasih udah bilang. aku butuh itu, bukan alasan']],
-    ['maaf kak, aku bales pas sempet aja','d-1',['hm. oke, kali ini kulewatin']]]},
-{t:['jujur aku juga lagi takut. pergi dari sini, kerja pertama, kamu. kebanyakan sekaligus','makanya aku nanya. kalau nggak, nggak adil buat kita berdua'],
- c:[['kita jalanin pelan-pelan kak. aku di sini','d1',['pelan. aku bisa pelan']],
-    ['kalau kakak mau mundur, bilang aja','j1',['aku nggak mau mundur. aku cuma pengin dijawab, bukan dihibur']]]},
-{h:'Bab 10 · Sabtu, 17 Oktober',s:'UTS selesai. Sh ngajak makan mi di warung belakang kampus.',t:['UTS beres! aku traktir mi, kamu pilih tempat','tapi syaratnya, ceritain satu hal yang kamu takut dari aku'],
- c:[['aku takut kakak pergi setelah wisuda','d1',['jujur banget','aku juga takut hal yang sama, tapi dari sisi lain','yuk makan dulu. mikirnya nanti']],
-    ['takut kakak lihat aku biasa-biasa aja','j1',['kamu tuh nggak biasa. kamu cuma belum sadar','udah, makan mi dulu']]]},
-{h:'Bab 11 · Minggu, 1 November',s:'Hari tenang. Sh kirim voice note yang kamu putar tiga kali.',t:['aku baru ngerjain toga dari rental. kebesaran banget wkwk','foto dulu ya? tapi janji jangan kamu simpan'],
- c:[['udah aku simpan kak, maaf','d1',['KAMU TUH','...ya sudah. aku pasrah','kamu lucu kalau lagi nggak sopan']],
-    ['janji kak, cuma aku lihat lalu hapus','j1',['bohong. tapi aku percaya','nanti kita foto bareng yang bagus, di depan gedung']]]},
-{h:'Bab 12 · Senin, 7 Desember',s:'Kabar masuk: Ayah Sh memajukan jadwal terbang.',t:['ayah mendarat Rabu sore, bukan Kamis pagi','dia nanya siapa temen yang sering aku chat tiap malam','aku jawab “temen sastra”. kamu keberatan?'],
- c:[['keberatan kak. aku mau dikenalin dengan jujur','R1',['...oke. berarti kamu serius','aku takut, tapi aku juga mau begitu','besok kita atur biar ayah ketemu kamu']],
-    ['nggak keberatan. kakak yang tahu waktunya','d1',['makasih udah ngerti','tapi aku nggak mau kamu terus jadi “temen sastra”','kita bahas lagi sebelum ayah datang']]]},
-{h:'Bab 13 · Selasa, 15 Desember',s:'Malam sebelum ayah mendarat. Sh nggak bales empat jam.',t:['maaf baru muncul. aku beresin kamar buat ayah','kayaknya aku nggak tenang. kamu lagi ngapain?'],
- c:[['lagi nyetrika kemeja putih buat besok, dua kali','d1',['dua kali?? hahaha kamu lebay','tapi aku senyum sendirian di kamar. makasih ya']],
-    ['lagi nemenin kakak ngetik doang','j1',['itu cukup','nemenin tuh kerjaan paling susah dan kamu jago']]]},
-{h:'Bab 14 · Rabu, 16 Desember',s:'Ayah Sh mendarat sore ini. Wisudanya besok jam delapan pagi.',t:['rai, ayah udah sampai. lagi makan soto di depan kosku','ayah bilang: kalau anak itu serius, besok jam 11 datang ke gedung wisuda. pakai kemeja, jangan kaos','kamu nggak harus. tapi ayah nggak nanya dua kali'],
- c:[['aku datang kak. kemeja putih ada','R1 d1',['makasih rai','kamu pasti gugup. aku gugup duluan']],
+{h:'Bab 1 · Jumat, 4 September',s:'Rapat perdana panitia Pekan Sastra. Kamu masuk divisi acara dan datang telat lima menit. Sh, ketua divisinya, sudah dua kali menatap jam. Kamu menyalin nomornya dari daftar panitia. Giliranmu chat duluan.',t:[],
+ c:[['kak sh, ini raihan, anak divisi acara. maaf tadi telat lima menit','d1',['lima menit di rundown gue itu sama dengan telat sejam','nomor lu dari mana?','...oh, daftar panitia. oke','besok sabtu jam 8 di sekre. ini bukan tawaran']],
+    ['kak, rai nih. tadi telat, salahku bukan salah jam','j1',['nggak ada yang bilang itu salah jam','tapi oke, lu ngaku. itu poin','besok sabtu jam 8 di sekre. jangan telat lagi']]]},
+{t:['lu yang tadi nyatet jadwal band, kan? yang bentrok sama sesi puisi di panggung yang sama','gue belum bilang siapa-siapa. tapi lu bener'],
+ c:[['iya kak. dua-duanya jam tiga','j1',['mata lu lumayan','jangan geer, itu cuma kebetulan lu duduk deket papan']],
+    ['kakak udah tau dari awal ya? kok nggak langsung dibenerin?','d1',['lagi gue benerin. gue nggak suka dikoreksi sebelum selesai','...tapi makasih udah nanya baik-baik']]]},
+{h:'Bab 2 · Sabtu, 5 September',n:1,s:'Sekretariat, Sabtu pagi. Dua anggota divisi acara mundur semalam. Tinggal kamu dan Sh, dengan papan rundown penuh coretan spidol.',t:['dua orang mundur semalem. tinggal gue sama lu','gue nggak minta tolong. gue cuma ngasih tau kenyataan','rundown final harus beres senin'],
+ c:[['aku bantu kak. bagi dua aja tugasnya','d1',['gue bagi. lu urus panggung, gue urus tamu','jangan ngerasa spesial. lu cuma satu-satunya yang masih ada']],
+    ['kakak yang atur, aku ikut','j1',['bagus. dengerin dulu, baru kasih ide','...tapi kalau ada ide, bilang. jangan diem aja']]]},
+{t:['gue ngitung ulang rundown dua kali tadi malem. satu kolom jam 14.40 salah ketik','lu urus panggung ya. jangan bikin gue ngitung tiga kali'],
+ c:[['siap. kirim versi terakhir, aku cek dari awal','d1',['nih. jangan dibaca sambil makan, nanti ada noda','...bercanda. tapi serius, jangan']],
+    ['kak, udah makan belum? dari pagi belum keluar sekre','j1',['kenapa nanya?','...belum','gue makan nanti. jangan ngurusin gue']]]},
+{h:'Bab 3 · Kamis, 10 September',s:'Rapat besar kedua. Tema acara diputuskan: “Pinggir Halaman”, malam pembacaan catatan di pinggir buku. Kemarin kamu menulis satu kalimat kecil di pinggir kertas rundown Sh.',t:['tadi lu liatin gue pas gue ngoreksi','jangan ngelak, gue liat','“ada jeda 10 menit buat napas?” itu tulisan lu di pinggir rundown gue, kan?'],
+ c:[['iya kak. biar kakak sempet napas','d1 K1',['dasar','gue baca. gue coret. gue tulis lagi. gue coret lagi','akhirnya gue pakai jedanya. jangan geer']],
+    ['bukan apa-apa kak, cuma coretan','j1',['bohong. tulisan lu miring pas lagi gugup','gue nggak marah. tapi lain kali bilang']]]},
+{h:'Bab 4 · Kamis, 17 September',s:'Sh batuk dua minggu dan menolak ke dokter. Sore ini kamu menaruh segelas kopi susu es sedikit di mejanya sebelum dia datang.',t:['ini kopi lu yang taruh?','es sedikit. gue nggak pernah bilang gue minta es sedikit','lu nyatet?'],
+ c:[['nggak nyatet kak. dua minggu lalu kakak ngomong sambil lewat, aku inget','d1',['lewat. dua minggu lalu dan lu masih inget','...','jangan jadi stalker. makasih kopinya']],
+    ['kebetulan aja kak, mungkin','j1',['kebetulan nggak kayak gini, rai','yaudah, gue minum. jangan liat gue pas minum']]]},
+{t:['besok rapat jam 4. lu udah makan belum hari ini?','biar gue nggak repot ngurusin orang pingsan','bukan perhatian. efisiensi'],
+ c:[['efisiensi yang bikin aku senyum','d1',['stop','...tapi laporan diterima']],
+    ['udah kak. nasi goreng depan kampus','j1',['bagus. kalau lu sakit, rundown gue juga sakit']]]},
+{h:'Bab 5 · Kamis, 24 September',s:'Hujan sejak sore. Survei venue di taman baca selesai jam tujuh, dan Sh tidak bawa payung.',t:['gue masih di gazebo taman baca. hujan nggak berhenti','lu udah pulang?'],
+ c:[['belum kak. aku ke sana bawa payung','d1',['~Kamu lari lima menit dengan satu payung. Bahumu basah sebelah.','bego. nanti lu sakit','tapi makasih. jarang ada yang mau repot buat hal sepele','~Kamu menggeser payung ke arah Sh. Dia pura-pura tidak sadar.']],
+    ['tunggu reda dulu kak, aku temenin lewat chat','j1',['ide bagus. ceritain apa aja biar nggak bosen','asal bukan rundown']]]},
+{h:'Bab 6 · Sabtu, 3 Oktober',s:'Bedah buku pra-acara di aula penuh. Sh jadi moderator dan lolos dari semua pertanyaan soal dirinya sendiri.',t:['temenmu si nadia bilang gue galak. gue denger tadi','lu nggak ikutan, kan?'],
+ c:[['nggak kak. aku bilang kakak galak tapi adil','d1',['adil. kata itu cuma lu yang pakai','...oke, gue terima']],
+    ['aku nggak komentar, takut kena rundown','j1',['wkwk. lu belajar cepet']]]},
+{t:['abis ini evaluasi. tapi gue laper','lu mau ikut makan? bukan ajakan. cuma kelebihan porsi'],
+ c:[['mau kak. aku yang bayar kelebihan porsinya','d1',['nggak usah. gue yang traktir','tapi jangan telat']],
+    ['aku ikut, tapi bagi dua ya','j1',['dasar anak kos','yaudah, bagi dua. dan gue senang lu bilang jujur']]]},
+{h:'Bab 7 · Rabu, 7 Oktober',s:'Ruang baca kampus, jam sebelas malam. Rundown final tinggal tiga halaman. Sh tertidur di atas kertas, pensil masih di tangannya.',t:['rai, lu masih di sini?','gue ketiduran lima menit. kayaknya'],
+ c:[['kak, ini jaketku. tidur aja, aku jaga','d1',['~Kamu menaruh jaket di bahunya, lalu pura-pura sibuk dengan layar ponsel.','lima menit doang. janji','ayah gue nelpon tadi. jam segini, jarang banget','dia cuma nanya acaranya penting nggak. nggak nanya gue udah makan atau belum','gue tau dia sayang. tapi caranya tuh...']],
+    ['kak, pulang aja. besok lanjut','j1',['nggak bisa. gue takut kalau berhenti, ketauan gue nggak cukup','ayah bilang sastra itu hobi. makanya acara ini harus sempurna']]]},
+{h:'Bab 8 · Sabtu, 10 Oktober',s:'Gladi resik jam sembilan. Kamu berjanji datang paling awal.',t:['sekarang jam 10.07','lu bilang jam 9','gue di tangga gedung b dari jam 8.30','lu di mana?'],
+ c:[['maaf kak. tadi temen minta tolong, aku nggak bisa nolak','j1',['nggak bisa nolak','lu nggak bisa nolak orang lain, tapi lu bisa nolak gue?','GUE NUNGGU, RAI','udah. gladi jalan. ngomongnya nanti']],
+    ['telat dikit aja kak, jangan lebay','F1',['lebay?','oke. gue lebay','gue nggak akan nunggu lagi']]]},
+{h:'Bab 9 · Rabu, 14 Oktober',s:'Minggu UTS. Kalian tidak saling chat sejak gladi. Siang ini kamu menunggu di depan fakultas Sh membawa dua bungkus makan siang.',t:['lu di depan fakultas gue?','gue lagi ngulang bab 3. lu ngapain di situ'],
+ c:[['bawa makan siang kak. aku minta maaf, tanpa alasan','d1 j1',['~Kamu menyerahkan bungkusan itu dan tidak menjelaskan apa pun.','gue marah bukan karena telat','gue marah karena gue mulai ngandelin lu','dan itu bikin gue takut','makasih makan siangnya']],
+    ['aku taruh di meja satpam ya kak. maaf','j1',['hm. oke','jangan ngilang dua hari lagi']]]},
+{t:['jujur aja, lu ngapain sih sampai segininya','gue bukan tipe yang kasih alasan buat orang ngejar'],
+ c:[['karena kakak orang yang mau aku tungguin','d1',['...','jangan ngomong gitu pas gue lagi belajar']],
+    ['karena aku cuma mau ngobrol lagi sama kakak','j1',['yaudah. ngobrol aja dulu','pelan-pelan']]]},
+{h:'Bab 10 · Sabtu, 17 Oktober',s:'Pekan Sastra selesai tanpa satu pun salah jadwal. Sh mengajak makan mi di warung belakang kampus.',t:['acara beres. nol salah jadwal. gue nggak percaya','gue traktir mi. syaratnya: ceritain satu hal yang lu takutin dari gue'],
+ c:[['takut kakak lihat aku biasa-biasa aja','j1',['lu nggak biasa. lu cuma belum sadar','udah, makan mi dulu']],
+    ['takut kakak pergi setelah wisuda','d1',['jujur banget','gue juga takut hal yang sama, dari sisi lain']]]},
+{s:'Mi sudah dingin. Kalian berdua duduk lama tanpa menyentuhnya. Giliranmu mengetik.',t:[],
+ c:[['kak, aku suka kakak. dari rapat pertama','d2 j1',['...','jangan geer','tapi aku juga. dari kopi yang es sedikit','pelan-pelan ya']],
+    ['temenan dulu aja kak. aku takut ngerusak','F1',['...oh. oke','alasanmu masuk akal. tapi aku sedikit sedih. sedikit doang']]]},
+{h:'Bab 11 · Minggu, 1 November',s:'Hari Minggu. Sh mengabarkan sesuatu dengan nada ramalan cuaca.',t:['info: gue keterima kerja di balikpapan. mulai januari','ayah udah tau. dia cuma bilang bagus','kita nggak usah ngapa-ngapain. nggak ada yang perlu diubah'],
+ c:[['aku nggak mau kakak ngomong gitu. aku mau ngapa-ngapain','d1',['gue tau lu bakal bilang gitu','makanya gue nyerang duluan. biar nggak jadi yang ditinggal','tapi... oke. kita ngomong, bukan lewat chat']],
+    ['oke kak. kakak yang tau waktunya','j1',['serius lu iya-in?','...gue nggak tau kenapa gue kecewa','gue mau tidur']]]},
+{t:['tapi serius, lu nggak apa-apa?','jangan jawab “nggak apa-apa”. itu jawaban yang gue pakai'],
+ c:[['agak kecewa, tapi aku bangga kakak diterima','d1',['...bangga','nggak ada yang pernah bilang itu ke gue']],
+    ['aku takut. tapi aku mau coba','j1',['makasih udah jujur','gue juga takut']]]},
+{h:'Bab 12 · Senin, 23 November',s:'Hari sidang skripsi. Ayah Sh batal datang karena cuaca. Kamu duduk di kursi koridor depan ruang sidang, tidak berkata apa-apa.',t:['gue selesai','lulus. revisi minor','lu masih duduk di situ?','ayah nggak jadi dateng. alasannya cuaca. yaudah'],
+ c:[['aku di sini kak. nggak ke mana-mana','d1 R1',['~Sh keluar dari ruang sidang dan berdiri di depanmu.','boleh nggak gue capek sebentar?','~Dia duduk di sebelahmu. Bahunya turun pelan-pelan.','makasih udah duduk di sini. itu cukup']],
+    ['selamat kak. aku traktir es krim ya','j1',['lu pikir semua masalah selesai gara-gara es krim','...yaudah, es krim aja','tapi jangan ngomong dulu']]]},
+{h:'Bab 13 · Sabtu, 5 Desember',s:'Sabtu malam, setelah kalian akhirnya membicarakan jarak.',t:['jadi kita gimana? jarak itu nyata, rai','gue nggak mau lu capek jadi ldr'],
+ c:[['aku mau cuti semester dulu, nyusul kakak ke balikpapan','d1',['LU GILA?','lu nggak boleh ngorbanin kuliah buat gue','~Dia hilang dari chat selama sepuluh menit.','gue marah karena gue seneng lu mau. itu yang bikin gue takut','gue minta tolong, pertama kalinya: jangan cuti. tapi tetep di sini sama gue']],
+    ['aku tetap kuliah. kita video call tiap malam','j2',['...itu masuk akal','tapi gue tau lu bakal kesepian','gue juga']]]},
+{h:'Bab 14 · Rabu, 16 Desember',s:'Malam sebelum wisuda. Ayah Sh mendarat sore tadi dan hujan turun tipis.',t:['rai, ayah udah sampai. lagi makan soto di depan kosku','ayah nanya siapa yang tiap malam chat gue','gue jawab: orang yang nungguin gue di depan ruang sidang','besok jam 11, lu bisa datang ke gedung wisuda? pakai kemeja, jangan kaos'],
+ c:[['aku datang kak. kemeja putih ada','R1 d1',['makasih rai','~Malam itu kamu menyetrika kemeja putih dua kali.','kamu pasti gugup. aku gugup duluan']],
     ['kak, aku belum siap ketemu ayah','j1',['oke. aku ngerti','tapi ayah nggak akan ngerti, dan aku nggak bisa bohong ke dia']]]},
-{L:1,t:['sebelum besok, satu pertanyaan yang nggak ada hubungannya sama ayah','kalau kamu disuruh nulis satu kalimat penutup buat cerita kita, apa?'],
+{L:1,t:['sebelum besok, satu pertanyaan yang nggak ada hubungannya sama ayah','kalau lu disuruh nulis satu kalimat penutup buat cerita kita, apa?'],
  c:[['bersambung.','d1',['...itu jahat. itu bagus. aku simpen']],
     ['tamat. tapi aku masih mau nulis lagi.','d1',['tamat tapi nulis lagi. itu plot twist yang aku mau']]]}
 ];
 const ENDS=[
-['Teman Baik, Alasan yang Rapi',()=>['Sh berangkat Minggu pagi, 20 Desember. Di pesan terakhir sebelum boarding dia nulis: “kita nggak jadi apa-apa, dan itu yang bikin kita awet.” Kamu ngetik ulang balasannya tiga kali, lalu cuma kirim “hati-hati kak.”',SC.R?'Ayah sempat nanya kalian itu apa. Kalian jawab barengan: teman. Ayah mengangguk, tapi lama.':'','Dua tahun kemudian kalian masih saling kirim foto buku random jam satu malam. Kadang kamu mikir, kalau dulu jawabanmu lain, ceritanya jadi kayak apa. Tapi nggak pernah sampai nyesel. Ada cerita yang paling bagus kalau berhenti di bab yang sama.']],
-['Belum Dikasih, Belum Ditolak',()=>['Jumat pagi Ayah pulang ke Balikpapan tanpa pernah melihat mukamu. Kata Sh: “ayah nggak nolak kamu. ayah cuma nggak bisa restuin orang yang belum pernah dia temui.”','Jadi kalian belum resmi apa-apa, tapi juga nggak ke mana-mana. Tiap malam tetap telepon. Kamu mulai nyisihin uang jajan.','Januari, pas libur semester, kamu beli tiket Semarang ke Balikpapan. Ibumu titip kue kering buat Ayah. Sh cuma nulis: “ayah mau ngobrol. itu aja dulu.” Itu aja dulu sudah cukup.']],
-['Jadian, Jarak Jauh',()=>['Kamis, 17 Desember, kamu duduk di barisan keluarga karena Ayah yang nyuruh. Sorenya, di depan gedung wisuda, Sh nanya “jadi?” dan kamu jawab “jadi.” Dua hari kemudian giliran kamu yang wisuda, dan Sh duduk di barisan keluarga.','Dia berangkat 20 Desember. Kalian video call tiap malam, ribut soal sinyal, baikan soal hal-hal kecil. Tiga bulan kemudian kamu sudah di Balikpapan, makan soto bareng Ayah yang masih jarang senyum.',SC.K?'Bukunya ada di kardus Sh yang belum dibongkar. Coretan di pinggirnya masih utuh, dan kalian sepakat nggak buru-buru baca semuanya.':'Bukunya sudah dikembalikan ke perpus dengan coretan terhapus semua. Tinggal halaman 41 yang masih ada di kepala kalian berdua.']],
-['Halaman Terakhir',()=>['Kamis, 17 Desember, 10.55. Kamu berdiri di depan gedung wisuda pakai kemeja putih yang disetrika dua kali.','Ayah Sh tinggi dan nggak tersenyum. Dia melihatmu dari sepatu sampai rambut, lalu bilang: “kamu yang beli buku perpus demi coretan anak saya?”','“Iya, Yah.” “Delapan puluh sembilan ribu.” “Dibagi dua, Yah.”','Ayah diam tiga detik. “Duduk. Kita makan.” Itu restunya. Kamu baru sadar belakangan.','Tiga tahun berlalu dengan video call, sinyal jelek, dan tiket murah yang selalu kamu cari jam dua pagi. Lalu harinya datang.','Di pernikahan kalian nggak ada buku tamu. Cuma “Rumah di Ujung Jalan”, terbuka di halaman terakhir, pensil diikat benang. Tamu menulis di pinggirnya satu per satu. Pak Dedi datang jauh-jauh dari Semarang dan menulis paling panjang: “Urusan buku ini resmi lunas. Jangan dicoret lagi.”','Malamnya, setelah tamu pulang, Sh membuka halaman itu. Di pojok bawah ada satu baris yang kamu tulis sendiri pagi tadi, diam-diam: “'+SC.L+'”','Di bawahnya, tulisan miring yang sangat dia kenal: “dibalas.”']]
+['Teman Baik, Alasan yang Rapi',()=>['Sh berangkat Minggu pagi, 20 Desember. Pesan terakhirnya sebelum boarding: “kita nggak jadi apa-apa, dan itu yang bikin kita awet.” Kamu ngetik ulang balasannya tiga kali, lalu cuma kirim “hati-hati kak.”',SC.R?'Ayah sempat nanya kalian itu apa. Kalian jawab barengan: teman. Ayah mengangguk, tapi lama.':'','Dua tahun kemudian kalian masih saling kirim foto buku random jam satu malam. Kadang kamu mikir, kalau dulu jawabanmu lain, ceritanya jadi apa. Tapi nggak pernah sampai nyesel. Ada cerita yang paling bagus kalau berhenti di bab yang sama.']],
+['Belum Dikasih, Belum Ditolak',()=>['Jumat pagi Ayah pulang ke Balikpapan tanpa pernah melihat mukamu. Kata Sh: “ayah nggak nolak kamu. ayah cuma nggak bisa restuin orang yang belum pernah dia temui.”','Jadi kalian belum resmi apa-apa, tapi juga nggak ke mana-mana. Tiap malam tetap telepon. Kamu mulai nyisihin uang jajan.','Januari, pas libur semester, kamu beli tiket ke Balikpapan. Sh cuma nulis: “ayah mau ngobrol. itu aja dulu.” Itu aja dulu sudah cukup.']],
+['Jadian, Jarak Jauh',()=>['Kamis, 17 Desember, kamu duduk di barisan keluarga karena Ayah yang nyuruh. Sorenya, di depan gedung wisuda, Sh nanya “jadi?” dan kamu jawab “jadi.” Dua hari kemudian giliran kamu menemani dia lagi, kali ini di bandara.','Dia berangkat 20 Desember. Kalian video call tiap malam, ribut soal sinyal, baikan soal hal-hal kecil. Tiga bulan kemudian kamu sudah di Balikpapan, makan soto bareng Ayah yang masih jarang senyum.',SC.K?'Rundown Pekan Sastra masih ada di map Sh. Kalimat kecilmu di pinggirnya tidak pernah dia hapus.':'Rundown Pekan Sastra sudah dibuang. Tapi jeda sepuluh menit itu masih dia pakai tiap kali kerjaannya mau meledak.']],
+['Halaman Terakhir',()=>['Kamis, 17 Desember, 10.55. Kamu berdiri di depan gedung wisuda pakai kemeja putih yang disetrika dua kali.','Ayah Sh tinggi dan nggak tersenyum. Dia melihatmu dari sepatu sampai rambut, lalu bilang: “kamu yang nungguin anak saya di depan ruang sidang?”','“Iya, Yah.” Ayah diam tiga detik. “Duduk. Kita makan.” Itu restunya. Kamu baru sadar belakangan.','Tiga tahun berlalu dengan video call, sinyal jelek, dan tiket murah yang selalu kamu cari jam dua pagi. Lalu harinya datang.','Di pernikahan kalian nggak ada buku tamu. Cuma rundown Pekan Sastra yang sudah lusuh, dibingkai. Tamu menulis catatan di pinggirnya satu per satu, dan Sh yang pertama: “jeda sepuluh menit buat napas. dari rai. gue pakai.”','Malamnya, setelah tamu pulang, Sh membaca pinggir bingkai itu. Di pojok bawah ada satu baris yang kamu tulis sendiri pagi tadi, diam-diam: “'+SC.L+'”','Di bawahnya, tulisan miring yang sangat dia kenal: “dibalas.”']]
 ];
 const ch=[
 {id:'rai',n:'088989747480',m:[]},
 {id:'mma',n:'Ibu',m:[['t','Rai, sudah makan belum, Nak? Jangan begadang ya.','Minggu 18.30'],['m','sudah bu. ini lagi belajar.']]},
 {id:'nad',n:'Nadia',m:[['t','Rai, tugas kelompok jadi dikumpul jam berapa?','Jumat 14.20'],['m','jam 10 nad. bagianku udah selesai.'],['t','Siap, makasih Rai!']]}];
-const LET='';
+const LET='kak sh, ini surat yang nggak jadi aku kasih di ruang baca. aku nggak pandai nulis panjang, jadi cuma ini: aku suka cara kakak ngitung jadwal dua kali, cara kakak galak tapi adil, dan cara kakak bilang jangan geer padahal senyumnya udah ketauan. kalau besok kakak mau pergi, aku mau jadi orang yang nulis di pinggir halaman yang sama. pakai pensil, biar bisa kakak bantah. rai';
 const LIVE=B.map(b=>({b:b.h,s:b.s,nm:b.n,t:b.t,c:b.c.map(c=>c[0]),sc:b.c.map(c=>c[1]),r:b.c.map(c=>c[2])}));
 let SC={};
 function score(){const o={d:0,j:0,R:0,K:0,F:0};LIVE.forEach((L,k)=>{const p=PK[k];(L.sc[p?p[0]:0]||'').replace(/([a-zA-Z])(-?\d)/g,(_,a,n)=>{o[a]+=+n})});const p=PK[LIVE.length-1];o.L=p?p[1]:LIVE[LIVE.length-1].c[0];return o}
@@ -209,7 +208,7 @@ async function shila(){if(done||wait||SB||st>=LIVE.length)return;SB=1;const L=LI
   if(chatOpen())page(1);else if(k==0){u=1;ban(x,ch[0].n)}else if(app&&sv=='msg')page(1)}
  wait=1;SB=0;if(chatOpen())page(1)}
 async function reply(i,txt){const L=LIVE[st];if(!L||!wait||!rdy())return;wait=0;pq=null;const my=st,ut=txt||L.c[i];PK[my]=[i,ut,clk(),0,QT[my]||0];ch[0].m.push(['m',ut,0,PK[my][2]]);tone(620,.07,.05);page(1);
- await sl(700);for(const x of L.r[i]){ty=1;if(chatOpen())page(1);await sl(650+x.length*24);ty=0;const rt=clk();PK[my][3]=rt;ch[0].m.push(['t',x,0,rt]);tone(1318,.12,.05);if(chatOpen())page(1);else if(app&&sv=='msg')page(1)}
+ await sl(700);for(const x of L.r[i]){ty=1;if(chatOpen())page(1);await sl(650+x.length*24);ty=0;const rt=clk();PK[my][3]=rt;ch[0].m.push(x[0]=='~'?['n',x.slice(1)]:['t',x,0,rt]);tone(1318,.12,.05);if(chatOpen())page(1);else if(app&&sv=='msg')page(1)}
  st++;if(st>=LIVE.length)setTimeout(()=>endG(endN()),2500);else setTimeout(shila,1800)}
 function unlock(){tone(990,.15);let RS=0;if(PEND){RS=1;const sv0=PEND;PEND=null;restore(sv0)}v='home';$('#wall').classList.remove('dim');$('#lk').style.display='none';$('#pn').style.display='none';const h=$('#hm');home();h.style.display='block';h.animate([{transform:'scale(1.18)',opacity:0},{transform:'none',opacity:1}],{duration:520,easing:'cubic-bezier(.2,.9,.22,1)'});[...h.querySelectorAll('.app,.wg')].forEach((e,i)=>e.animate([{transform:'scale(.7)',opacity:0},{transform:'none',opacity:1}],{duration:480,delay:30+i*25,easing:'cubic-bezier(.2,1.1,.3,1)',fill:'backwards'}));if(!RS)setTimeout(shila,8000)}
 let pq=null,at=0,AG=0;const QT={};const sl=ms=>new Promise(r=>setTimeout(r,ms));
@@ -341,7 +340,7 @@ function rebuild(idx){
  const m=ch[0].m;
  for(let j=0;j<idx&&j<LIVE.length;j++){const L=LIVE[j],p=PK[j]||[0,L.c[0],0,0,0];
   if(L.b)m.push(['s',L.b]);if(L.nm){m.push(['n','Kamu menyimpan nomor itu sebagai “Kak Sh”.']);ch[0].n=CN||'Kak Sh'}if(L.s)m.push(['n',L.s]);
-  L.t.forEach(x=>m.push(['t',x,0,p[4]||0]));m.push(['m',p[1],0,p[2]||0]);L.r[p[0]].forEach(x=>m.push(['t',x,0,p[3]||0]))}
+  L.t.forEach(x=>m.push(['t',x,0,p[4]||0]));m.push(['m',p[1],0,p[2]||0]);L.r[p[0]].forEach(x=>m.push(x[0]=='~'?['n',x.slice(1)]:['t',x,0,p[3]||0]))}
  if(CN)ch[0].n=CN;shots=sh0;for(let i=0;i<shots;i++)ph.push(rainPhoto());
  st=idx;wait=0;ty=0;done=0;u=0;fi=0;EN=0;pq=null;at=0;SB=0;AG++;T.chat=''}
 function jumpTo(idx){
