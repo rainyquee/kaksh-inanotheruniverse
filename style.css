@@ -555,3 +555,17 @@ html.inapp #hb{pointer-events:auto}
 .cb .fld{white-space:pre-wrap;overflow-wrap:anywhere;word-break:break-word;align-items:flex-start;max-height:144px;overflow-x:hidden;overflow-y:auto;line-height:22px;padding-top:6px;padding-bottom:6px;-webkit-overflow-scrolling:touch}
 .cb .fld .fv{display:block;flex:1;min-width:0}
 .cb .fld .cr{display:inline-block;vertical-align:text-bottom}
+
+/* Typografi chat: lebih mirip percakapan sehari-hari, bukan kutipan novel. */
+#cs .bb{
+  max-width:79%;
+  padding:9px 13px;
+  font-size:15.5px;
+  line-height:1.42;
+  letter-spacing:-.12px;
+  overflow-wrap:anywhere;
+}
+#cs .mg{gap:4px}
+#cs .bb.t{border-radius:18px 18px 18px 6px}
+#cs .bb.m{border-radius:18px 18px 6px 18px}
+#cs .bb.ty{border-radius:18px 18px 18px 6px}
