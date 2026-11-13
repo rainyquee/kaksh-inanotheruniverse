@@ -550,3 +550,8 @@ html.inapp #hb{pointer-events:auto}
    Blur dipindah ke ::before supaya kartu tetap glass beneran. */
 .k_p,#k_n{-webkit-backdrop-filter:none;backdrop-filter:none;background:none}
 .k_p::before{content:'';position:absolute;inset:0;z-index:-1;pointer-events:none;background:rgba(10,12,18,.28);-webkit-backdrop-filter:blur(28px) saturate(1.5);backdrop-filter:blur(28px) saturate(1.5)}
+
+/* kolom chat: mulai satu baris, melebar ke atas kalau teks butuh baris baru */
+.cb .fld{white-space:pre-wrap;overflow-wrap:anywhere;word-break:break-word;align-items:flex-start;max-height:144px;overflow-x:hidden;overflow-y:auto;line-height:22px;padding-top:6px;padding-bottom:6px;-webkit-overflow-scrolling:touch}
+.cb .fld .fv{display:block;flex:1;min-width:0}
+.cb .fld .cr{display:inline-block;vertical-align:text-bottom}
