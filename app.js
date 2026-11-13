@@ -203,13 +203,13 @@ let SB=0,CN='';
 async function shila(){if(done||wait||SB||st>=LIVE.length)return;SB=1;const L=LIVE[st],my=st,m=ch[0].m;
  if(L.b)m.push(['s',L.b]);
  if(L.nm){m.push(['n','Kamu menyimpan nomor itu sebagai “Kak Sh”.']);ch[0].n=CN||'Kak Sh'}
- if(L.s){await sl(500);m.push(['n',L.s]);if(chatOpen())page(1);await sl(900)}
- for(let k=0;k<L.t.length;k++){const x=L.t[k];ty=1;if(chatOpen())page(1);await sl(650+x.length*24);ty=0;QT[my]=QT[my]||clk();m.push(['t',x,0,clk()]);tone(1318,.12,.05);
+ if(L.s){await sl(500);m.push(['n',L.s]);if(chatOpen())page(1);await sl(350)}
+ for(let k=0;k<L.t.length;k++){const x=L.t[k];ty=1;if(chatOpen())page(1);await sl(140+x.length*5);ty=0;QT[my]=QT[my]||clk();m.push(['t',x,0,clk()]);tone(1318,.12,.05);
   if(chatOpen())page(1);else if(k==0){u=1;ban(x,ch[0].n)}else if(app&&sv=='msg')page(1)}
  wait=1;SB=0;if(chatOpen())page(1)}
 async function reply(i,txt){const L=LIVE[st];if(!L||!wait||!rdy())return;wait=0;pq=null;const my=st,ut=txt||L.c[i];PK[my]=[i,ut,clk(),0,QT[my]||0];ch[0].m.push(['m',ut,0,PK[my][2]]);tone(620,.07,.05);page(1);
- await sl(700);for(const x of L.r[i]){ty=1;if(chatOpen())page(1);await sl(650+x.length*24);ty=0;const rt=clk();PK[my][3]=rt;ch[0].m.push(x[0]=='~'?['n',x.slice(1)]:['t',x,0,rt]);tone(1318,.12,.05);if(chatOpen())page(1);else if(app&&sv=='msg')page(1)}
- st++;if(st>=LIVE.length)setTimeout(()=>endG(endN()),2500);else setTimeout(shila,1800)}
+ await sl(400);for(const x of L.r[i]){ty=1;if(chatOpen())page(1);await sl(140+x.length*5);ty=0;const rt=clk();PK[my][3]=rt;ch[0].m.push(x[0]=='~'?['n',x.slice(1)]:['t',x,0,rt]);tone(1318,.12,.05);if(chatOpen())page(1);else if(app&&sv=='msg')page(1)}
+ st++;if(st>=LIVE.length)setTimeout(()=>endG(endN()),2500);else setTimeout(shila,900)}
 function unlock(){tone(990,.15);let RS=0;if(PEND){RS=1;const sv0=PEND;PEND=null;restore(sv0)}v='home';$('#wall').classList.remove('dim');$('#lk').style.display='none';$('#pn').style.display='none';const h=$('#hm');home();h.style.display='block';h.animate([{transform:'scale(1.18)',opacity:0},{transform:'none',opacity:1}],{duration:520,easing:'cubic-bezier(.2,.9,.22,1)'});[...h.querySelectorAll('.app,.wg')].forEach((e,i)=>e.animate([{transform:'scale(.7)',opacity:0},{transform:'none',opacity:1}],{duration:480,delay:30+i*25,easing:'cubic-bezier(.2,1.1,.3,1)',fill:'backwards'}));if(!RS)setTimeout(shila,8000)}
 let pq=null,at=0,AG=0;const QT={};const sl=ms=>new Promise(r=>setTimeout(r,ms));
 const T={chat:'',saf:'',cd:'',ig:'',nm:''},KR={abc:['qwertyuiop','asdfghjkl','zxcvbnm'],num:['1234567890','-/:;()$&@"','.,?!\'']},PH0={ig:'Message...',chat:'iMessage',saf:'Cari atau masukkan situs',cd:'',nm:'Nama kontak'},RT={chat:'kirim',saf:'Cari',cd:'Buka',nm:'Simpan'},HS=['resep kopi susu','jam buka Kopi Kampus','halte Cempaka','kenapa hujan bikin rindu'];
@@ -238,20 +238,20 @@ async function pick(i){
  const hit=async(sel,ms)=>{const b=document.querySelector('#kbw '+sel);if(b)b.classList.add('pr');await sl(ms)};
  pq=i;at=1;T.chat='';
  if(kbo&&kt=='chat'){page(1);ref()}else openKb('chat');
- await sl(560);
+ await sl(180);
  for(const c of s){
   if(!ok())return stop();
-  if(!kbo){openKb('chat');await sl(480);if(!ok())return stop()}
+  if(!kbo){openKb('chat');await sl(120);if(!ok())return stop()}
   const isL=/[a-z]/i.test(c);
-  if(c!=' '){const need=isL?'abc':'num';if(km!=need){await hit('[data-kf="mode"]',rnd(80,130));if(!ok())return stop();kf('mode',1);await sl(rnd(120,200))}}
-  if(isL){const up=c!=c.toLowerCase();if((sh==1)!=up){await hit('[data-kf="sh"]',rnd(80,130));if(!ok())return stop();kf('sh',1);await sl(rnd(100,170))}}
+  if(c!=' '){const need=isL?'abc':'num';if(km!=need){await hit('[data-kf="mode"]',rnd(25,50));if(!ok())return stop();kf('mode',1);await sl(rnd(35,65))}}
+  if(isL){const up=c!=c.toLowerCase();if((sh==1)!=up){await hit('[data-kf="sh"]',rnd(25,50));if(!ok())return stop();kf('sh',1);await sl(rnd(25,55))}}
   const lab=isL?(sh?c.toUpperCase():c.toLowerCase()):c;
   const key=[...document.querySelectorAll('#kbw .k')].find(b=>b.dataset.ch===lab);
   if(key)key.classList.add('pr');
-  await sl(rnd(55,100));
+  await sl(rnd(12,25));
   if(!ok())return stop();
   typ(c,1);
-  await sl(/[.,?!:]/.test(c)?rnd(170,260):rnd(45,115));
+  await sl(/[.,?!:]/.test(c)?rnd(45,75):rnd(10,28));
  }
  if(g==AG)at=0;
 }
